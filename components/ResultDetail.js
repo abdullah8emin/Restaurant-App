@@ -1,14 +1,12 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function ResultDetail({ item }) {
-
-    
-
     return (
         <View style={styles.view} >
-            {item.is_closed ? <FontAwesome style={styles.icon} name="ban" size={24} color="black" /> : null}
+            {item.is_closed ? <FontAwesome style={styles.icon} name="ban" size={30} color="black" /> : <MaterialIcons style={styles.icon} name="delivery-dining" size={30} color="black" />}
             <Image style={styles.image} source={item.image_url ? { uri: item.image_url } : null} />
             <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{item.name}</Text>
             <Text>Puan: {item.rating} {"\n"}Değerlendirme sayisi: {item.review_count}</Text>
